@@ -3,17 +3,6 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_beehoney_game/game/BeeHoney.dart';
 
-class Main extends StatelessWidget {
-  const Main({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MainMenu(),
-    );
-  }
-}
-
 class MainMenu extends StatelessWidget {
   const MainMenu({Key? key}) : super(key: key);
 
