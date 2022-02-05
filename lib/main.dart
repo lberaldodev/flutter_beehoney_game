@@ -1,8 +1,8 @@
-
-import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
-import 'game/BeeHoney.dart';
+import 'package:flutter_beehoney_game/screens/MainMenu.dart';
 
 void main() {
-  runApp(GameWidget(game: BeeHoney()));
+  runApp(const MaterialApp(
+    home: MainMenu(),
+  ));
 }
