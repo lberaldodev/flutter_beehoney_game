@@ -24,6 +24,13 @@ class BeeHoney extends FlameGame with KeyboardEvents, HasCollidables {
       )
   );
 
+  TextComponent lifes = TextComponent(
+      text: 'Lifes: ',
+      position: Vector2(400, 10),
+      textRenderer: TextPaint(style: TextStyle(color: BasicPalette.black.color)
+      )
+  );
+
   @override
   Future<void>? onLoad() async {
     bg
@@ -68,6 +75,7 @@ class BeeHoney extends FlameGame with KeyboardEvents, HasCollidables {
     add(flower);
 
     add(score);
+    add(lifes);
     return super.onLoad();
   }
 
@@ -86,6 +94,7 @@ class BeeHoney extends FlameGame with KeyboardEvents, HasCollidables {
     flower.move(dt, 200);
 
     score.text = textScore + scoreValue.toString();
+    lifes.text = textLifes + lifesValue.toString();
 
     super.update(dt);
   }

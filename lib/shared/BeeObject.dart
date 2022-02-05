@@ -22,6 +22,7 @@ class Bee extends BaseObject {
   void onCollision(Set<Vector2> intersectionPoints, Collidable other) {
     super.onCollision(intersectionPoints, other);
     if (other is Spider) {
+      lifesValue -= 1;
       other.position.y = -100;
     }
 
