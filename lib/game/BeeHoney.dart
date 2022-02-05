@@ -2,6 +2,8 @@ import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flame/geometry.dart';
 import 'package:flame/input.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_beehoney_game/shared/BackgroundObject.dart';
 import 'package:flutter_beehoney_game/shared/BeeObject.dart';
 import 'package:flutter_beehoney_game/shared/FlowerObject.dart';
@@ -75,5 +77,21 @@ class BeeHoney extends FlameGame with KeyboardEvents, HasCollidables {
     flower.move(dt, 200);
 
     super.update(dt);
+  }
+
+  @override
+  KeyEventResult onKeyEvent(
+      RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
+    if (event.data.keyLabel == 'a' && bee.position.x >= 0) {
+      bee.left = true;
+    } else {
+      bee.left = false;
+    }
+    if (event.data.keyLabel == 'd' && bee.position.x <= 500) {
+      bee.right = true;
+    } else {
+      bee.right = false;
+    }
+    return super.onKeyEvent(event, keysPressed);
   }
 }
