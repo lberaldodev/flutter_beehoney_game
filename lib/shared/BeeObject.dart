@@ -1,5 +1,6 @@
 
 import 'package:flame/components.dart';
+import 'package:flutter_beehoney_game/globals/globals.dart';
 import 'package:flutter_beehoney_game/shared/BaseObject.dart';
 import 'FlowerObject.dart';
 import 'SpiderObject.dart';
@@ -25,6 +26,7 @@ class Bee extends BaseObject {
     }
 
     if (other is Flower) {
+      scoreValue +=1;
       other.position.y = -100;
       other.position.x = random(50, 500);
     }

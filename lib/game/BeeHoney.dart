@@ -5,6 +5,7 @@ import 'package:flame/input.dart';
 import 'package:flame/palette.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_beehoney_game/globals/globals.dart';
 import 'package:flutter_beehoney_game/shared/BackgroundObject.dart';
 import 'package:flutter_beehoney_game/shared/BeeObject.dart';
 import 'package:flutter_beehoney_game/shared/FlowerObject.dart';
@@ -83,6 +84,8 @@ class BeeHoney extends FlameGame with KeyboardEvents, HasCollidables {
 
     flower.animate(8, 2, 'florwer');
     flower.move(dt, 200);
+
+    score.text = textScore + scoreValue.toString();
 
     super.update(dt);
   }
