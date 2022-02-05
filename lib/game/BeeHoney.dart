@@ -96,6 +96,10 @@ class BeeHoney extends FlameGame with KeyboardEvents, HasCollidables {
     score.text = textScore + scoreValue.toString();
     lifes.text = textLifes + lifesValue.toString();
 
+    if(isGameOver){
+      pauseEngine();
+      overlays.add('gameOver');
+    }
     super.update(dt);
   }
 

@@ -2,6 +2,7 @@
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_beehoney_game/game/BeeHoney.dart';
+import 'package:flutter_beehoney_game/screens/GameOver.dart';
 
 class MainMenu extends StatelessWidget {
   const MainMenu({Key? key}) : super(key: key);
@@ -16,6 +17,7 @@ class MainMenu extends StatelessWidget {
             MaterialPageRoute(
               builder: (context) => GameWidget(
                 game: BeeHoney(),
+                overlayBuilderMap: const {"gameOver": gameOverWidget},
               ),
             ),
           );
