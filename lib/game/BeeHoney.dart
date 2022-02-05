@@ -2,6 +2,7 @@ import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flame/geometry.dart';
 import 'package:flame/input.dart';
+import 'package:flame/palette.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_beehoney_game/shared/BackgroundObject.dart';
@@ -15,6 +16,12 @@ class BeeHoney extends FlameGame with KeyboardEvents, HasCollidables {
   Bee bee = Bee();
   Spider spider = Spider();
   Flower flower = Flower();
+  TextComponent score = TextComponent(
+      text: 'Score: ',
+      position: Vector2(10, 10),
+      textRenderer: TextPaint(style: TextStyle(color: BasicPalette.black.color)
+      )
+  );
 
   @override
   Future<void>? onLoad() async {
@@ -59,6 +66,7 @@ class BeeHoney extends FlameGame with KeyboardEvents, HasCollidables {
       ..addHitbox(HitboxRectangle());
     add(flower);
 
+    add(score);
     return super.onLoad();
   }
 
