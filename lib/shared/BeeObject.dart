@@ -1,5 +1,8 @@
 
+import 'package:flame/components.dart';
 import 'package:flutter_beehoney_game/shared/BaseObject.dart';
+import 'FlowerObject.dart';
+import 'SpiderObject.dart';
 
 class Bee extends BaseObject {
   bool right = false;
@@ -11,6 +14,19 @@ class Bee extends BaseObject {
     }
     if (left) {
       x -= speed * dt;
+    }
+  }
+
+  @override
+  void onCollision(Set<Vector2> intersectionPoints, Collidable other) {
+    super.onCollision(intersectionPoints, other);
+    if (other is Spider) {
+      other.position.y = -100;
+    }
+
+    if (other is Flower) {
+      other.position.y = -100;
+      other.position.x = random(50, 500);
     }
   }
 }
