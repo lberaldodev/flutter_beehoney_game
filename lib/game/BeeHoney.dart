@@ -64,6 +64,16 @@ class BeeHoney extends FlameGame with KeyboardEvents, HasCollidables {
   void update(double dt) {
     bg.move(dt, 100, 900, 0);
     bg2.move(dt, 100, 0, -900);
+
+    bee.move(dt, 100);
+    bee.animate(8, 4, 'bee');
+
+    spider.animate(4, 4, 'spider');
+    spider.move(dt, 100, bee);
+
+    flower.animate(8, 2, 'florwer');
+    flower.move(dt, 200);
+
     super.update(dt);
   }
 }
