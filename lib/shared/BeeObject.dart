@@ -26,13 +26,13 @@ class Bee extends BaseObject {
         isGameOver = true;
       }
       lifesValue -= 1;
-      other.position.y = -100;
+      other.position.y = -100.toDouble();
     }
 
     if (other is Flower) {
       scoreValue +=1;
-      other.position.y = -100;
-      other.position.x = random(50, 500);
+      other.position.y = -100.toDouble();
+      other.position.x = random(50, 500).toDouble();
     }
   }
 }

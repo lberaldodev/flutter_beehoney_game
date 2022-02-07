@@ -5,7 +5,7 @@ class Bg extends SpriteComponent {
     y += speed * dt;
 
     if (y >= limit) {
-      y = posY;
+      y = posY.toDouble();
     }
   }
 }
