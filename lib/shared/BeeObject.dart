@@ -10,10 +10,10 @@ class Bee extends BaseObject {
   bool left = false;
 
   move(dt, speed) {
-    if (right) {
+    if (right && x <= 475) {
       x += speed * dt;
     }
-    if (left) {
+    if (left && x >= 25) {
       x -= speed * dt;
     }
   }
